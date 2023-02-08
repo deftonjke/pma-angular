@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://final-task-backend-production-acb6.up.railway.app',
+  apiUrl: 'https://pma-team4.up.railway.app',
 };
