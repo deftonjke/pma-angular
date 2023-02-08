@@ -1,0 +1,21 @@
+<form
+  [formGroup]="createColumnFrom"
+  (ngSubmit)="onSubmit()"
+  class="create-column">
+  <h2>{{ 'CREATE_COL_MODAL.title' | translate }}</h2>
+  <div class="create-column_inputs-container">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'CREATE_COL_MODAL.label' | translate }}</mat-label>
+      <input matInput formControlName="title" required />
+      <mat-error *ngIf="title!.invalid">
+        {{ 'CREATE_COL_MODAL.formError' | translate }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" type="submit">
+    {{ 'CREATE_COL_MODAL.btn' | translate }}
+  </button>
+  <button mat-icon-button (click)="onClose()" class="close-modal-btn">
+    <mat-icon>close</mat-icon>
+  </button>
+</form>

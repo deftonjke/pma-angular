@@ -1,0 +1,44 @@
+<mat-list-item class="result">
+  <div class="result_item">
+    <div class="result_item__data">
+      <div>
+        <p mat-card-subtitle class="result_item__task-sub">
+          {{ 'SEARCH.taskLabel' | translate }}:
+        </p>
+        <p class="result_item__task">{{ result.title }}</p>
+      </div>
+      <div>
+        <p mat-card-subtitle class="result_item__task-sub">
+          {{ 'SEARCH.descLabel' | translate }}:
+        </p>
+        <p class="result_item__description" mat-card-content>
+          {{ result.description }}
+        </p>
+      </div>
+    </div>
+    <div class="result_item_btns">
+      <button
+        mat-stroked-button
+        (click)="navigateToBoard()"
+        class="result_item_remove-btn">
+        <mat-icon
+          mat-icon-no-color
+          color="accent"
+          class="result_item_remove-btn__icon"
+          >developer_board</mat-icon
+        >{{ 'SEARCH.openBoard' | translate }}
+      </button>
+    </div>
+  </div>
+  <div *ngIf="result.users.length !== 0" class="result_users">
+    <p mat-card-subtitle class="result_item__task-sub">
+      {{ 'SEARCH.users' | translate }}:
+    </p>
+    <div class="result_users_list">
+      <p mat-card-content *ngFor="let user of taskUsersObjects; index as i">
+        {{ taskUsersObjects[i].name }} |
+      </p>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+</mat-list-item>

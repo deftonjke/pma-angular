@@ -1,0 +1,38 @@
+.result {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem 1rem;
+  &_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__task-sub {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    &_btns {
+      margin-left: 1.5rem;
+    }
+    &_remove-btn {
+      &__icon {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &__task,
+    &__description {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+  &_users {
+    &_list {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}

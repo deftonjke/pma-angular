@@ -1,0 +1,73 @@
+<div class="column-title_wrapper">
+  <div class="column-title">
+    <ng-template #header>
+      <h2 class="column-title_header" (click)="isFocused = true">
+        {{ column.title }}
+      </h2>
+    </ng-template>
+    <form
+      [formGroup]="formTitleInput"
+      (ngSubmit)="onTitleChanged()"
+      class="column-title_form"
+      *ngIf="isFocused; else header">
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="columnTitle"
+          required
+          class="column-title_input" />
+        <div class="column-title_buttons">
+          <button
+            mat-icon-button
+            matSuffix
+            color="accent"
+            class="button"
+            type="submit">
+            <mat-icon class="icon">done</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            matSuffix
+            class="button"
+            (click)="onCloseTitleInput()"
+            type="button">
+            <mat-icon class="icon">close</mat-icon>
+          </button>
+        </div>
+        <mat-error *ngIf="columnTitle!.invalid" class="column-title_error">{{
+          'COLUMN.titleErr' | translate
+        }}</mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Column meu"
+    class="column-title__menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onTaskAddClick()">
+      <mat-icon>add</mat-icon>
+      <span>{{ 'COLUMN.addTask' | translate }}</span>
+    </button>
+    <button mat-menu-item (click)="openConfirmModal()">
+      <mat-icon>delete_forever</mat-icon>
+      <span>{{ 'COLUMN.deleteCol' | translate }}</span>
+    </button>
+  </mat-menu>
+</div>
+<div
+  class="tasks_container"
+  cdkDropList
+  id="{{ column._id }}"
+  [cdkDropListData]="tasks"
+  [cdkDropListConnectedTo]="columnsIds"
+  (cdkDropListDropped)="dropTasks($event)">
+  <app-task *ngFor="let task of tasks" [currentTask]="task" cdkDrag></app-task>
+</div>
+<button mat-menu-item (click)="onTaskAddClick()" class="add-task-btn">
+  <mat-icon>add</mat-icon>
+  <span>{{ 'COLUMN.addTask' | translate }}</span>
+</button>

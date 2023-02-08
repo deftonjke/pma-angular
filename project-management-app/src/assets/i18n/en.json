@@ -1,0 +1,171 @@
+{
+  "FOOTER": {
+    "github": "Developers' Github",
+    "person1": "Svetlana",
+    "person2": "Vitali"
+  },
+  "HEADER": {
+    "user_btns": {
+      "login_btn": "Login",
+      "logout_btn": "Logout",
+      "edit_profile_btn": "Profile",
+      "signup_btn": "Sign Up"
+    },
+    "new_board_btn": "New board"
+  },
+  "MAIN_PAGE": {
+    "main_title": "boards",
+    "new_board_btn": "Create board",
+    "no_boards": "You haven't created any board yet"
+  },
+  "NOT_FOUND": {
+    "error": "404 Sorry, the requested page was not found(("
+  },
+  "WELCOME_PAGE": {
+    "hero_title_1": "Project Management App",
+    "hero_title_2": "for High Performing Team",
+    "hero_subtitle": "Easy to Start. Visual to Use. Great Solutions.",
+    "get_started_btn": "Get Started",
+    "tools-section": {
+      "title": "Manage complex work easily",
+      "list_item1": "List view",
+      "list_item2": "Boards",
+      "list_item3": "Cards",
+      "list_descr1": "Organize and assign tasks. With lists, teams see immediately what they need to do, which tasks are a priority, and when work is due.",
+      "list_descr2": "Make it easy for your team to focus on tasks currently at hand. Define each stage of work to see what/’s important and where things are getting stuck.",
+      "list_descr3": "PMA cards are your portal to more organized work—where every single part of your task can be managed, tracked, and shared with teammates."
+    },
+    "about-section": {
+      "title": "About Us",
+      "description": "The application is developed as part of an Angular 2022Q3 course by Rolling Scopes School.",
+      "person1_title": "Svetlana",
+      "person1_descr1": "Deploy backend",
+      "person1_descr2": "Main page",
+      "person1_descr3": "Board page",
+      "person1_descr4": "DragNdrop",
+      "person1_descr5": "Search page",
+      "person1_descr6": "Additional functionality",
+      "person2_title": "Vitali",
+      "person2_descr1": "Welcome page",
+      "person2_descr2": "Authorization",
+      "person2_descr3": "Profile page",
+      "person2_descr4": "Localization"
+    }
+  },
+  "FORM": {
+    "labelName": "Name",
+    "labelLogin": "Login",
+    "labelPass": "Password",
+    "nameFormErrorReq": "Please enter your name",
+    "nameFormErrorMinL": "Your name is too short",
+    "nameFormErrorMaxL": "Your name is too long",
+    "nameFormErrorRegx": "Latin or Cyrillic letters only, i.e: Ivan Ivanov",
+    "loginFormErrorReq": "Please enter a login",
+    "loginFormErrorMinL": "Your login is too short",
+    "loginFormErrorMaxL": "Your login is too long",
+    "loginFormErrorRegx": "Login can only consist of latin letters and numbers",
+    "passFormErrorReq": "Please enter a password",
+    "passFormErrorRegx": "At least 8 chars with numbers, uppercase, special char !@#?]",
+    "passMinL": "Minimum password length 8 characters",
+    "passHasUpperCase": "Password must contain uppercase letters",
+    "passHasNumeric": "Password must contain numbers",
+    "passHasSymbol": "Password must contain special chars: ! @ # ? ]"
+  },
+  "LOGIN_PAGE": {
+    "title": "Hello",
+    "subtitle": "Log in to your account",
+    "btn": "Login",
+    "noAccount": "No account?",
+    "link": "Sign Up"
+  },
+  "SIGNUP_PAGE": {
+    "title": "Sign up",
+    "subtitle": "One project management tool for the whole company, from marketing to engineering and more.",
+    "btn": "Sign Up",
+    "haveAccount": "Already have an account?",
+    "link": "Log In"
+  },
+  "USER_PAGE": {
+    "title": "User profile",
+    "save": "Save",
+    "successSaved": "Successfully saved!",
+    "delete": "Delete accaount"
+  },
+  "BOARD_PAGE": {
+    "title": "Board",
+    "createColBtn": "Create Column",
+    "assignedUserInfo": "Assigned user info",
+    "assignedUserName": "Name",
+    "assignedUserLogin": "Login",
+    "deleteUserFromBoardBtn": "Delete user from board"
+  },
+  "CREATE_BOARD_MODAL": {
+    "title": "Create Board",
+    "label": "title",
+    "formError": "Please enter a board title",
+    "btn": "Create",
+    "addUsers": "Add users"
+  },
+  "CREATE_COL_MODAL": {
+    "title": "Create Column",
+    "label": "title",
+    "formError": "Please enter a column title",
+    "btn": "Create"
+  },
+  "CREATE_TASK_MODAL": {
+    "title": "Create task",
+    "labelTitle": "title",
+    "labelDescription": "Description",
+    "formTitleError": "Please enter a task title",
+    "formDescriptionError": "Please enter a task description",
+    "btn": "Create"
+  },
+  "ASSIGN_USERS_MODAL": {
+    "title": "Assign users to board",
+    "selectLabel": "All users",
+    "noUsers": "There are no more users registered in this app",
+    "btn": "Assign selected users"
+  },
+  "CONFIRM_MODAL": {
+    "title": "Delete",
+    "targetAccount": "account",
+    "targetBoard": "board",
+    "targetCol": "column",
+    "targetTask": "task",
+    "question": "Are you sure?",
+    "cancel": "Cancel"
+  },
+  "COLUMN": {
+    "titleErr": "Please enter a column title",
+    "addTask": "Add task",
+    "deleteCol": "Delete column"
+  },
+  "TASK": {
+    "title": "Edit task",
+    "labelTitle": "Title",
+    "formTitleErr": "Please enter a task title",
+    "labelDescription": "Description",
+    "formDescriptionErr": "Please enter a task description",
+    "save": "Save",
+    "assignUsers": "Assign users",
+    "assignedUsers": "Assigned users"
+  },
+  "API_ERRORS": {
+    "loginExist": "Login already exist",
+    "authError": "Wrong login or password",
+    "invalidToken": "Invalid Token",
+    "badRequest": "Server error, plaese, try again",
+    "unknowError": "Unknown error... Refresh page",
+    "notFounded": "Not founded"
+  },
+  "SEARCH": {
+    "error": "Please, enter some text",
+    "start-your-search": "Please, start your search",
+    "not-found": "Nothing was found",
+    "search-results": "Your search request:",
+    "taskLabel": "Task",
+    "descLabel": "Description",
+    "openBoard": "Open Task Board",
+    "users": "Users"
+  }
+}

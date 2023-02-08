@@ -1,0 +1,43 @@
+.board {
+  &_item {
+    background-color: #f3f5fb;
+    width: 14rem;
+    height: 14rem;
+    margin: 0.5rem;
+    padding-top: 1.5rem;
+    @media (max-width: 425px) {
+      height: 10rem;
+    }
+  }
+  &_link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &_item-icon {
+    padding-right: 1.5rem !important;
+  }
+  &_header {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    margin: 0;
+    font-weight: 700;
+    padding-top: 3rem;
+    text-align: center;
+  }
+  &_remove-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    &__icon {
+      font-size: 1.2rem;
+      color: rgba(0, 0, 0, 0.54);
+    }
+  }
+}

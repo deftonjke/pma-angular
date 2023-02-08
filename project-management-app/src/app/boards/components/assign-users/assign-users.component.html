@@ -1,0 +1,28 @@
+<form
+  [formGroup]="assignUsersForm"
+  (ngSubmit)="onAssignUserToBoardClick()"
+  #formDirective="ngForm"
+  class="assign-user-form">
+  <h2>{{ 'ASSIGN_USERS_MODAL.title' | translate }}</h2>
+  <div
+    class="assign-user-form_inputs-container"
+    *ngIf="restUsers.length !== 0; else noUsers">
+    <mat-form-field>
+      <mat-label>{{ 'ASSIGN_USERS_MODAL.selectLabel' | translate }}</mat-label>
+      <mat-select formControlName="usersSelect" multiple>
+        <mat-option *ngFor="let user of restUsers" [value]="user._id">{{
+          user.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <ng-template #noUsers
+    ><p class="no-users">{{ 'ASSIGN_USERS_MODAL.noUsers' | translate }}</p>
+  </ng-template>
+  <button mat-raised-button color="primary" type="submit">
+    {{ 'ASSIGN_USERS_MODAL.btn' | translate }}
+  </button>
+  <button mat-icon-button (click)="onClose()" class="close-modal-btn">
+    <mat-icon mat-list-icon> close </mat-icon>
+  </button>
+</form>

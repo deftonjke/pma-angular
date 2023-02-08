@@ -1,0 +1,111 @@
+<mat-card class="mat-card-profile">
+  <div *ngIf="currentUser" class="profile__header">
+    <mat-card-title>{{ 'USER_PAGE.title' | translate }}</mat-card-title>
+    <img src="../../../../assets/images/avatar.png" alt="avatar" />
+  </div>
+
+  <mat-card-content>
+    <form
+      class="form"
+      [formGroup]="ProfileForm"
+      (submit)="onSubmit(formDirective)"
+      #formDirective="ngForm">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ 'FORM.labelName' | translate }}</mat-label>
+        <input id="name" matInput formControlName="name" />
+        <mat-error *ngIf="ProfileForm.controls.name.errors?.['required']">
+          {{ 'FORM.nameFormErrorReq' | translate }}
+        </mat-error>
+        <mat-error *ngIf="ProfileForm.controls.name.errors?.['minlength']">
+          {{ 'FORM.nameFormErrorMinL' | translate }}
+        </mat-error>
+        <mat-error *ngIf="ProfileForm.controls.name.errors?.['maxlength']">
+          {{ 'FORM.nameFormErrorMaxL' | translate }}
+        </mat-error>
+        <mat-error *ngIf="ProfileForm.controls.name.errors?.['errorMsg']">
+          {{ 'FORM.nameFormErrorRegx' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ 'FORM.labelLogin' | translate }}</mat-label>
+        <input id="login" matInput formControlName="login" />
+        <mat-error *ngIf="ProfileForm.controls.login.errors?.['required']">
+          {{ 'FORM.loginFormErrorReq' | translate }}
+        </mat-error>
+        <mat-error *ngIf="ProfileForm.controls.login.errors?.['minlength']">
+          {{ 'FORM.loginFormErrorMinL' | translate }}
+        </mat-error>
+        <mat-error *ngIf="ProfileForm.controls.login.errors?.['maxlength']">
+          {{ 'FORM.loginFormErrorMaxL' | translate }}
+        </mat-error>
+        <mat-error *ngIf="ProfileForm.controls.login.errors?.['errorMsg']">
+          {{ 'FORM.loginFormErrorRegx' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field
+        [ngClass]="{ mb60: ProfileForm.controls.password.errors?.['errorMsg'] }"
+        class="full-width"
+        appearance="outline">
+        <mat-label>{{ 'FORM.labelPass' | translate }}</mat-label>
+        <input
+          id="password"
+          type="password"
+          matInput
+          formControlName="password" />
+        <mat-error *ngIf="ProfileForm.controls.password.errors?.['required']">
+          {{ 'FORM.passFormErrorReq' | translate }}
+        </mat-error>
+        <mat-error *ngIf="ProfileForm.controls.password.errors?.['errorMsg']">
+          {{ 'FORM.passFormErrorRegx' | translate }}
+          <ul>
+            <ng-container
+              *ngFor="let err of ProfileForm.controls.password.errors?.['errorMsg'] | keyvalue">
+              <li *ngIf="err.value">
+                {{ err.value }}
+              </li>
+            </ng-container>
+          </ul>
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        *ngIf="!isSuccessSubmited; else successNote"
+        [disabled]="submited"
+        class="form__btn full-width"
+        type="submit"
+        color="accent"
+        mat-flat-button>
+        <mat-icon
+          aria-hidden="true"
+          aria-label="Save"
+          fontIcon="save"></mat-icon>
+        {{ 'USER_PAGE.save' | translate }}
+      </button>
+      <ng-template #successNote>
+        <span class="submitted-success">
+          <mat-icon
+            color="green"
+            aria-hidden="true"
+            aria-label="submitted"
+            fontIcon="check_small"></mat-icon
+          >{{ 'USER_PAGE.successSaved' | translate }}
+        </span>
+      </ng-template>
+
+      <mat-card-footer>
+        <button
+          (click)="openConfirmModal()"
+          type="button"
+          color="basic"
+          mat-flat-button>
+          <mat-icon
+            color="warn"
+            aria-hidden="true"
+            aria-label="Delete account"
+            fontIcon="person_remove"></mat-icon>
+          {{ 'USER_PAGE.delete' | translate }}
+        </button>
+      </mat-card-footer>
+    </form>
+  </mat-card-content>
+</mat-card>

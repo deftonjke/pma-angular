@@ -1,0 +1,16 @@
+<mat-list-item class="board_item">
+  <div class="board_link" (click)="navigateToBoard(board._id!)">
+    <mat-icon mat-icon-no-color class="board_item-icon">grid_view</mat-icon>
+    <h4 class="board_header">{{ board.title }}</h4>
+  </div>
+  <button
+    mat-icon-button
+    (click)="openConfirmModal()"
+    class="board_remove-btn"
+    type="button">
+    <mat-icon mat-icon-no-color class="board_remove-btn__icon"
+      >delete_outline</mat-icon
+    >
+  </button>
+  <mat-divider></mat-divider>
+</mat-list-item>

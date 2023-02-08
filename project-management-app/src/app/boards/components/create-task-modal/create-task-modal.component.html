@@ -1,0 +1,35 @@
+<form [formGroup]="createTaskForm" (ngSubmit)="onSubmit()" class="create-task">
+  <h2>{{ 'CREATE_TASK_MODAL.title' | translate }}</h2>
+  <div class="create-task_inputs-container">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'CREATE_TASK_MODAL.labelTitle' | translate }}</mat-label>
+      <input matInput formControlName="title" required />
+      <mat-error *ngIf="title!.invalid">
+        {{ 'CREATE_TASK_MODAL.formTitleError' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>
+        {{ 'CREATE_TASK_MODAL.labelDescription' | translate }}
+      </mat-label>
+      <input matInput formControlName="description" required />
+      <mat-error *ngIf="description!.invalid">
+        {{ 'CREATE_TASK_MODAL.formDescriptionError' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'CREATE_BOARD_MODAL.addUsers' | translate }}</mat-label>
+      <mat-select formControlName="usersSelect" multiple>
+        <mat-option *ngFor="let user of assignedUsers" [value]="user._id">{{
+          user.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" type="submit">
+    {{ 'CREATE_TASK_MODAL.title' | translate }}
+  </button>
+  <button mat-icon-button (click)="onClose()" class="close-modal-btn">
+    <mat-icon>close</mat-icon>
+  </button>
+</form>
