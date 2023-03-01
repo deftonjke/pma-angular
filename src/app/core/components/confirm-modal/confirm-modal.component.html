@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{ 'CONFIRM_MODAL.title' | translate }} {{ title }}</h2>
+<div mat-dialog-content>{{ 'CONFIRM_MODAL.question' | translate }}</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="cancel()">
+    {{ 'CONFIRM_MODAL.cancel' | translate }}
+  </button>
+  <button
+    color="warn"
+    mat-button
+    mat-dialog-close
+    cdkFocusInitial
+    (click)="OK()">
+    OK
+  </button>
+</div>

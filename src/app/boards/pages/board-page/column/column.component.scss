@@ -1,0 +1,117 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 17rem;
+  min-width: 17rem;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  box-sizing: border-box;
+  cursor: move;
+  font-size: 14px;
+  border-radius: 4px;
+  background: linear-gradient(#efefef, #e6f4ff) no-repeat;
+
+  @media (max-width: 760px) {
+    width: 13rem;
+    min-width: 13rem;
+  }
+}
+
+.column-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &_header {
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: -0.2em;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+
+  &__menu {
+    align-self: baseline;
+  }
+
+  &_form {
+    display: flex;
+    position: relative;
+  }
+  &_input {
+    width: 75%;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+
+    @media (max-width: 760px) {
+      width: 55%;
+    }
+  }
+  &_buttons {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    display: flex;
+    .button {
+      width: 1.2rem;
+      line-height: 1.2rem;
+      height: 1.2rem;
+    }
+    .icon {
+      font-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+      line-height: 1;
+    }
+
+    @media (max-width: 760px) {
+      right: 37px;
+    }
+  }
+}
+
+.tasks_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.4rem;
+  height: 100%;
+  overflow-y: hidden;
+  &:hover {
+    overflow-y: auto;
+  }
+}
+
+.add-task-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  mat-icon {
+    margin-right: 10px !important;
+  }
+}
+
+::ng-deep .column-title .mat-form-field-infix {
+  border-top: 0 !important;
+  margin-top: 6px !important;
+  margin-left: 10px !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0.45em !important;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  bottom: 0.5em !important;
+}

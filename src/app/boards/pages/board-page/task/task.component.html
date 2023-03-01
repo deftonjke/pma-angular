@@ -1,0 +1,13 @@
+<mat-card
+  class="task"
+  *ngIf="currentTask"
+  [ngClass]="{ hidden: isDeleted === true }">
+  <div class="task_data" (click)="onTaskOpen()">
+    <mat-card-title class="task_title">{{ currentTask.title }}</mat-card-title>
+  </div>
+  <button mat-icon-button (click)="openConfirmModal()" class="task_delete-btn">
+    <mat-icon mat-icon-no-color class="task_delete-btn__icon"
+      >delete_outline</mat-icon
+    >
+  </button>
+</mat-card>

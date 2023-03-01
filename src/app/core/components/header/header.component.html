@@ -1,0 +1,97 @@
+<div class="header">
+  <div class="header_logo">
+    <a routerLink="/">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="PM-App"
+        color="primary"
+        fontIcon="view_kanban"></mat-icon
+      >PM-App
+    </a>
+  </div>
+  <div
+    class="header_menu flex-container"
+    [ngClass]="{ fullWidth: isUserAuthorized }">
+    <div *ngIf="isUserAuthorized" class="flex-container">
+      <div class="header_create-board">
+        <button
+          mat-stroked-button
+          (click)="onCreateNewBoard()"
+          class="result_item_remove-btn">
+          {{ 'HEADER.new_board_btn' | translate }}
+          <mat-icon
+            mat-icon-no-color
+            color="accent"
+            class="result_item_remove-btn__icon"
+            >dashboard_customize</mat-icon
+          >
+        </button>
+      </div>
+      <div class="header_search-bar">
+        <app-search-bar></app-search-bar>
+      </div>
+    </div>
+    <div class="flex-container">
+      <div class="header_language">
+        <button (click)="changeLang()" mat-icon-button aria-label="languages">
+          <mat-icon color="primary" class="lang-ico">translate</mat-icon
+          >{{ switchLangTo }}
+        </button>
+      </div>
+      <div class="header_auth" *ngIf="isUserAuthorized; else unathorized">
+        <div class="header_user">
+          <button routerLink="/profile" mat-flat-button color="primary">
+            {{ 'HEADER.user_btns.edit_profile_btn' | translate }}
+          </button>
+          <button mat-stroked-button color="primary" (click)="logout()">
+            {{ 'HEADER.user_btns.logout_btn' | translate }}
+          </button>
+        </div>
+      </div>
+      <ng-template #unathorized>
+        <div class="header_user-unauth">
+          <button routerLink="/auth/login" mat-flat-button color="primary">
+            {{ 'HEADER.user_btns.login_btn' | translate }}
+          </button>
+          <button routerLink="/auth/sign-up" mat-stroked-button color="primary">
+            {{ 'HEADER.user_btns.signup_btn' | translate }}
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div *ngIf="isUserAuthorized" class="mobile-search-bar">
+    <app-search-bar></app-search-bar>
+  </div>
+  <div class="mobile-menu">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        *ngIf="isUserAuthorized"
+        (click)="onCreateNewBoard()"
+        mat-menu-item>
+        <mat-icon color="accent">dashboard_customize</mat-icon>
+        <span>{{ 'HEADER.new_board_btn' | translate }}</span>
+      </button>
+      <button *ngIf="isUserAuthorized" routerLink="/profile" mat-menu-item>
+        {{ 'HEADER.user_btns.edit_profile_btn' | translate }}
+      </button>
+      <button *ngIf="!isUserAuthorized" routerLink="/auth/login" mat-menu-item>
+        {{ 'HEADER.user_btns.login_btn' | translate }}
+      </button>
+      <button *ngIf="isUserAuthorized" (click)="logout()" mat-menu-item>
+        {{ 'HEADER.user_btns.logout_btn' | translate }}
+      </button>
+
+      <button mat-menu-item (click)="changeLang()" aria-label="languages">
+        <mat-icon color="primary">translate</mat-icon>
+        <span>{{ switchLangTo }}</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>

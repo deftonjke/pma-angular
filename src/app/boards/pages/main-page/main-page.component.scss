@@ -1,0 +1,28 @@
+:host {
+  padding: 3rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.boards {
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 425px) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+  }
+}
+
+.no-boards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10%;
+  p {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+  }
+}

@@ -1,0 +1,81 @@
+<mat-card class="mat-card-signup">
+  <mat-card-title>{{ 'SIGNUP_PAGE.title' | translate }}</mat-card-title>
+  <mat-card-subtitle>
+    {{ 'SIGNUP_PAGE.subtitle' | translate }}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <form class="form" [formGroup]="signUpForm" (submit)="onSubmit()">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ 'FORM.labelName' | translate }}</mat-label>
+        <input id="name" matInput formControlName="name" />
+        <mat-error *ngIf="signUpForm.controls.name.errors?.['required']">
+          {{ 'FORM.nameFormErrorReq' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls.name.errors?.['minlength']">
+          {{ 'FORM.nameFormErrorMinL' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls.name.errors?.['maxlength']">
+          {{ 'FORM.nameFormErrorMaxL' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls.name.errors?.['errorMsg']">
+          {{ 'FORM.nameFormErrorRegx' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ 'FORM.labelLogin' | translate }}</mat-label>
+        <input id="login" matInput formControlName="login" />
+        <mat-error *ngIf="signUpForm.controls.login.errors?.['required']">
+          {{ 'FORM.loginFormErrorReq' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls.login.errors?.['minlength']">
+          {{ 'FORM.loginFormErrorMinL' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls.login.errors?.['maxlength']">
+          {{ 'FORM.loginFormErrorMaxL' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls.login.errors?.['errorMsg']">
+          {{ 'FORM.loginFormErrorRegx' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field
+        [ngClass]="{ mb60: signUpForm.controls.password.errors?.['errorMsg'] }"
+        class="full-width"
+        appearance="outline">
+        <mat-label>{{ 'FORM.labelPass' | translate }}</mat-label>
+        <input
+          id="password"
+          type="password"
+          matInput
+          formControlName="password" />
+        <mat-error *ngIf="signUpForm.controls.password.errors?.['required']">
+          {{ 'FORM.passFormErrorReq' | translate }}
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls.password.errors?.['errorMsg']">
+          {{ 'FORM.passFormErrorRegx' | translate }}
+          <ul>
+            <ng-container
+              *ngFor="let err of signUpForm.controls.password.errors?.['errorMsg'] | keyvalue">
+              <li *ngIf="err.value">
+                {{ err.value }}
+              </li>
+            </ng-container>
+          </ul>
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        [disabled]="submited"
+        class="form__btn full-width"
+        type="submit"
+        color="accent"
+        mat-flat-button>
+        {{ 'SIGNUP_PAGE.btn' | translate }}
+      </button>
+
+      <mat-card-footer>
+        {{ 'SIGNUP_PAGE.haveAccount' | translate }}
+        <a routerLink="/auth/login">{{ 'SIGNUP_PAGE.link' | translate }}</a>
+      </mat-card-footer>
+    </form>
+  </mat-card-content>
+</mat-card>

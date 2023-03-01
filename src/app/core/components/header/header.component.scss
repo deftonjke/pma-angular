@@ -1,0 +1,130 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  &_menu {
+    position: relative;
+
+    @media (max-width: 760px) {
+      display: none;
+    }
+  }
+
+  &_auth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  display: flex;
+  height: 4rem;
+  padding: 1rem 2.2rem;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b0b0b0;
+  @media (max-width: 780px) {
+    padding: 0.8rem;
+  }
+  &_logo {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    min-width: 144px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    @media (max-width: 800px) {
+      min-width: 120px;
+      font-size: 1.2rem;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      color: #000;
+      text-decoration: none;
+
+      transition: opacity 100ms linear;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.7;
+      }
+    }
+  }
+  &_create-board {
+    margin-right: 3rem;
+
+    p {
+      font-size: 1rem;
+      font-weight: normal;
+      text-transform: none;
+      margin-bottom: 0;
+      padding-right: 1rem;
+    }
+
+    @media (max-width: 1000px) {
+      margin-right: 0.5rem;
+    }
+  }
+  &_search-bar {
+    display: flex;
+    justify-content: center;
+
+    transition: opacity 100ms linear;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &_user {
+    display: flex;
+    gap: 0.5rem;
+  }
+  &_language {
+    margin-right: 2rem;
+
+    transition: opacity 100ms linear;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    .mat-icon {
+      height: 17px;
+      width: 17px;
+      font-size: 17px;
+      line-height: 16px;
+    }
+  }
+  &_user-unauth {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.mobile-menu {
+  display: none;
+
+  @media (max-width: 760px) {
+    display: block;
+  }
+}
+
+.mobile-search-bar {
+  position: relative;
+  display: none;
+
+  @media (max-width: 760px) {
+    display: block;
+  }
+}

@@ -1,0 +1,61 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-card-profile {
+  max-width: 360px;
+  margin: 0 10px;
+  padding: 40px;
+}
+
+.profile__header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  .mat-card-title {
+    position: absolute;
+    top: -30px;
+  }
+
+  img {
+    max-width: 240px;
+  }
+}
+
+.mat-card-footer {
+  margin: 30px 0px -20px 0;
+}
+
+.mat-error ul {
+  margin-top: 4px;
+
+  .bullet {
+    font-size: 16px;
+  }
+}
+
+.form__btn {
+  height: 44px;
+}
+
+.mb60 {
+  margin-bottom: 60px;
+}
+
+.submitted-success {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: forestgreen;
+}

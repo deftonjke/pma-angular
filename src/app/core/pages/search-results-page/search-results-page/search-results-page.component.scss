@@ -1,0 +1,14 @@
+:host {
+  padding: 1.5rem 4rem;
+  height: 100%;
+  overflow-y: auto;
+
+  @media (max-width: 760px) {
+    padding: 1rem;
+  }
+}
+
+.no-results {
+  position: absolute;
+  top: 15%;
+}

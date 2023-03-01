@@ -1,0 +1,152 @@
+<main class="container">
+  <section class="wrapper hero">
+    <div class="hero__intro">
+      <h1 class="hero__title">
+        <span class="span">{{ 'WELCOME_PAGE.hero_title_1' | translate }}</span>
+        <span class="span">{{ 'WELCOME_PAGE.hero_title_2' | translate }}</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        {{ 'WELCOME_PAGE.hero_subtitle' | translate }}
+      </p>
+
+      <button
+        routerLink="/auth/sign-up"
+        class="hero__button"
+        color="primary"
+        mat-flat-button>
+        {{ 'WELCOME_PAGE.get_started_btn' | translate }}
+      </button>
+    </div>
+    <div class="hero__pic">
+      <img class="img" src="../../../../assets/images/hero.png" title="hero" />
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section class="wrapper tools">
+    <div class="tools__pic">
+      <img
+        class="img"
+        src="../../../../assets/images/kanban.png"
+        title="hero" />
+    </div>
+    <div class="tools__description">
+      <h2 class="h2 tools__title">
+        {{ 'WELCOME_PAGE.tools-section.title' | translate }}
+      </h2>
+      <div class="features">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon
+                aria-hidden="true"
+                aria-label="List view"
+                fontIcon="view_kanban"></mat-icon
+              >{{
+                'WELCOME_PAGE.tools-section.list_item1' | translate
+              }}</mat-card-title
+            >
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{ 'WELCOME_PAGE.tools-section.list_descr1' | translate }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon
+                aria-hidden="true"
+                aria-label="Boards"
+                fontIcon="developer_board"></mat-icon
+              >{{
+                'WELCOME_PAGE.tools-section.list_item2' | translate
+              }}</mat-card-title
+            >
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{ 'WELCOME_PAGE.tools-section.list_descr2' | translate }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon
+                aria-hidden="true"
+                aria-label="Cards"
+                fontIcon="view_timeline"></mat-icon
+              >{{
+                'WELCOME_PAGE.tools-section.list_item3' | translate
+              }}</mat-card-title
+            >
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{ 'WELCOME_PAGE.tools-section.list_descr3' | translate }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+  <section class="wrapper about-us">
+    <div class="about-us__header">
+      <h2 class="h2">{{ 'WELCOME_PAGE.about-section.title' | translate }}</h2>
+      <p>{{ 'WELCOME_PAGE.about-section.description' | translate }}</p>
+    </div>
+    <div class="about-us__team">
+      <div class="about-us__person">
+        <img
+          class="about-us__avatar"
+          src="https://avatars.githubusercontent.com/u/39500221?v=4"
+          alt="sveta" />
+        <h3>{{ 'WELCOME_PAGE.about-section.person1_title' | translate }}</h3>
+        <mat-list>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person1_descr1' | translate
+          }}</mat-list-item>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person1_descr2' | translate
+          }}</mat-list-item>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person1_descr3' | translate
+          }}</mat-list-item>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person1_descr4' | translate
+          }}</mat-list-item>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person1_descr5' | translate
+          }}</mat-list-item>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person1_descr6' | translate
+          }}</mat-list-item>
+        </mat-list>
+      </div>
+      <div class="about-us__person">
+        <img
+          class="about-us__avatar"
+          src="https://avatars.githubusercontent.com/u/15246554?v=4"
+          alt="vitali" />
+        <h3>{{ 'WELCOME_PAGE.about-section.person2_title' | translate }}</h3>
+        <mat-list>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person2_descr1' | translate
+          }}</mat-list-item>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person2_descr2' | translate
+          }}</mat-list-item>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person2_descr3' | translate
+          }}</mat-list-item>
+          <mat-list-item>{{
+            'WELCOME_PAGE.about-section.person2_descr4' | translate
+          }}</mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </section>
+</main>

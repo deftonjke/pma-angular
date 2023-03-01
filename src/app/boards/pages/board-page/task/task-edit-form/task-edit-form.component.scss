@@ -1,0 +1,99 @@
+:host {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+
+  background: linear-gradient(#f6f9fa, #fafdff) no-repeat;
+  border-radius: 4px;
+  box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%),
+    0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+}
+
+.task-container {
+  width: 100%;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      margin: 1rem;
+    }
+  }
+}
+
+.task-form {
+  &_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 1.5rem;
+  }
+  &_filed {
+    width: 100%;
+    padding: 2rem 0 0 0;
+
+    p {
+      display: flex;
+      align-items: center;
+    }
+
+    textarea {
+      height: 40px;
+    }
+  }
+  &_header {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  &_input {
+    font-family: 'Montserrat', sans-serif;
+  }
+  &_users-assigned {
+    margin-top: 1.5rem;
+    &_container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      .users {
+        flex: 1 1 30%;
+        .user {
+          display: flex;
+          align-items: center;
+          &_name {
+            margin: 0;
+          }
+          &_delete-btn {
+            margin: 0;
+            &__icon {
+              font-size: 1rem;
+              color: rgba(0, 0, 0, 0.54);
+            }
+          }
+        }
+      }
+    }
+  }
+  button {
+    margin-top: 1.5rem;
+  }
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: inherit;
+  &:hover {
+    color: #3f51b5;
+  }
+}
+
+::ng-deep .task-form .mat-form-field-infix {
+  border-top: 0 !important;
+}

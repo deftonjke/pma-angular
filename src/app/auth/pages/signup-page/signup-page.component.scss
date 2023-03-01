@@ -1,0 +1,36 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-card-signup {
+  max-width: 360px;
+  margin: 0 10px;
+  padding: 40px;
+}
+
+.mat-card-footer {
+  margin: 30px 0px -20px 0;
+}
+
+.mat-error ul {
+  margin-top: 4px;
+
+  .bullet {
+    font-size: 16px;
+  }
+}
+
+.form__btn {
+  height: 44px;
+}
+
+.mb60 {
+  margin-bottom: 60px;
+}

@@ -1,0 +1,86 @@
+<div class="task-container">
+  <div class="task-container_header">
+    <p mat-dialog-title>{{ 'TASK.title' | translate }}:</p>
+  </div>
+  <mat-divider></mat-divider>
+  <div mat-dialog-content class="task-form">
+    <form
+      [formGroup]="formTask"
+      (ngSubmit)="onTaskDataChanged()"
+      class="task-form_form">
+      <mat-form-field class="task-form_filed">
+        <p>
+          <mat-icon
+            aria-hidden="true"
+            fontIcon="title"
+            color="primary"></mat-icon>
+          <b>{{ 'TASK.labelTitle' | translate }}:</b>
+        </p>
+        <input
+          matInput
+          formControlName="title"
+          required
+          class="task-form_input" />
+        <mat-error *ngIf="title!.invalid" class="task-form_error">{{
+          'TASK.formTitleErr' | translate
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="task-form_filed">
+        <p>
+          <mat-icon
+            aria-hidden="true"
+            fontIcon="description"
+            color="primary"></mat-icon>
+          <b>{{ 'TASK.labelDescription' | translate }}:</b>
+        </p>
+        <textarea
+          matInput
+          formControlName="description"
+          required
+          class="task-form_input"></textarea>
+        <mat-error *ngIf="title!.invalid" class="task-form_error">{{
+          'TASK.formDescriptionErr' | translate
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field
+        class="task-form_filed"
+        *ngIf="boardUsersObjects.length !== 0">
+        <p>{{ 'TASK.assignUsers' | translate }}:</p>
+        <mat-select formControlName="usersSelect" multiple>
+          <mat-option *ngFor="let user of boardUsersObjects" [value]="user._id">
+            {{ user.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div
+        class="task-form_users-assigned"
+        *ngIf="assignedUsersObjects.length !== 0">
+        <p>
+          <b>{{ 'TASK.assignedUsers' | translate }}:</b>
+        </p>
+        <div class="task-form_users-assigned_container">
+          <div *ngFor="let user of assignedUsersObjects" class="users">
+            <div class="user">
+              <p class="user_name">{{ user.name }}</p>
+              <button
+                mat-icon-button
+                class="user_delete-btn"
+                type="button"
+                (click)="deleteAssignedUser(user._id)">
+                <mat-icon mat-icon-no-color class="user_delete-btn__icon"
+                  >delete_outline</mat-icon
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button color="primary">
+        {{ 'TASK.save' | translate }}
+      </button>
+    </form>
+  </div>
+  <button mat-icon-button (click)="onClose()" class="close-modal-btn">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
